@@ -1,0 +1,13 @@
+#include <iostream>
+
+using namespace std;
+
+int main (){
+
+    int x=5;
+    int y=7;
+    int p=x*y;
+    cout<<"Pole prostokata o wymiarach 5x7 wynosi:"<<p<<endl;
+
+return 0;
+}
