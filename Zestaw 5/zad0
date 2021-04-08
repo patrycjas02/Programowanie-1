@@ -1,0 +1,28 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+
+using namespace std;
+
+int main (){
+
+    int n=7;
+    int A[n][n];
+
+    srand(time(NULL));
+
+    for (int i=0; i<n; i++){
+        for (int j=0; j<n; j++){
+            A[i][j]=rand()%20-10;
+        }
+    }
+
+    for (int i=0; i<n; i++){
+        for (int j=0; j<n; j++){
+            cout<<A[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
+return 0;
+}
