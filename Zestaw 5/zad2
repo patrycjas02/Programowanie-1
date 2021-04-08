@@ -33,7 +33,7 @@ int main (){
 
         cout<<"Najwiekszy element: "<<maks<<endl;
         cout<<"Wspolrzedne najwiekszego elementu: "<<x<<","<<y<<endl;
-        cout<<"Sprawdzenie: "<<A[x][y]<<endl
+        cout<<"Sprawdzenie: "<<A[x][y]<<endl;
 
 return 0;
 }
