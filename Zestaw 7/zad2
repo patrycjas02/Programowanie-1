@@ -1,0 +1,48 @@
+#define _USE_MATH_DEFINES
+#include <iostream>
+#include <cmath>
+#include <cstring>
+
+using namespace std;
+
+int area(int a){//pole kwadratu o boku a
+    return a*a;
+}
+
+int area(int a, int b){//pole prostokata o bokach a i b
+    return a*b;
+}
+
+double area(double r){//pole koła o promieniu r
+    return M_PI*r*r;
+}
+
+int main (){
+
+    cout<<"Pole jakiej figury chcesz obliczyc? (kwadrat/prostokat,kolo)"<<endl;
+
+    string napis;
+    cin>>napis;
+
+    if(napis=="kwadrat"){
+        int x;
+        cout<<"Podaj dlugosc boku kwadratu: ";
+        cin>>x;
+        cout<<"Pole: "<<area(x)<<endl;
+    }
+    else if(napis=="prostokat"){
+        int x,y;
+        cout<<"Podaj dlugosci bokow prostokata: ";
+        cin>>x>>y;
+        cout<<"Pole: "<<area(x,y)<<endl;
+
+    }
+    else if(napis=="kolo"){
+        double x;
+        cout<<"Podaj dlugosc promienia: ";
+        cin>>x;
+        cout<<"Pole: "<<area(x)<<endl;
+    }
+
+return 0;
+}
