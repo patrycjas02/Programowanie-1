@@ -29,5 +29,7 @@ int main (){
 
     cout<<endl<<"Najwieksza wartosc tablicy: "<<*najwiekszy<<endl;
 
+    delete [] A;
+
 return 0;
 }
