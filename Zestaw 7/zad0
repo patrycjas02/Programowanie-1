@@ -1,0 +1,49 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+bool friends(int a, int b){//Liczby zaprzyjaźnione to dwie liczby naturalne,
+    //gdzie każda z nich jest równa sumie dzielników właściwych drugiej liczby
+
+    int suma_dzielnikow_a=0;
+
+    for(int i=1;i<=(a/2);i++){
+        if(a%i==0){
+            suma_dzielnikow_a+=i;
+        }
+    }
+
+    int suma_dzielnikow_b=0;
+
+    for(int i=1;i<=(b/2);i++){
+        if(b%i==0){
+            suma_dzielnikow_b+=i;
+        }
+    }
+
+    if(suma_dzielnikow_a==b && suma_dzielnikow_b==a){
+        return true;
+    }
+    else return false;
+
+}
+
+int main (){
+
+    cout<<"Podaj dwie liczby naturalne: ";
+    int n, m;
+    cin>>n>>m;
+
+    cout<<"czy liczby sa zaprzyjaznione?"<<endl;
+    if(friends(n,m)){
+        cout<<"tak"<<endl;
+    }
+    else{
+        cout<<"nie"<<endl;
+    }
+    //cout<<friends(n,m)<<endl;
+
+
+return 0;
+}
