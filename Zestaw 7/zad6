@@ -1,0 +1,32 @@
+#define _USE_MATH_DEFINES
+#include <iostream>
+#include <cmath>
+#include <cstring>
+
+using namespace std;
+
+long long silnia(int n){
+
+    if((n==1)||(n==2)){
+        return n;
+    }
+    long long silnia=1;
+
+    for(int i=n; i>=1; i-=2){
+        silnia*=i;
+    }
+    return silnia;
+
+}
+
+int main (){
+
+    cout<<"Podaj liczbe: "<<endl;
+
+    int x;
+    cin>>x;
+
+    cout<<"Jej silnia podwojna: "<<silnia(x)<<endl;
+
+return 0;
+}
