@@ -1,0 +1,34 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+
+using namespace std;
+
+int main (){
+
+    int n;
+    cin>>n;
+
+    int *A;
+    A=new int[n];
+
+    srand(time(NULL));
+
+    int parzyste=0;
+
+    for (int i=0, *pointer=A; i<n; i++){
+        *pointer=rand()%11+0;
+        if(*pointer%2==0){
+            parzyste++;
+        }
+        cout<<*pointer<<" ";
+        pointer++;
+    }
+    cout<<endl;
+    cout<<"Ilosc liczb parzystych w tablicy A: "<<parzyste<<endl;
+
+
+    delete [] A;
+
+return 0;
+}
