@@ -1,0 +1,35 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+
+using namespace std;
+
+int main (){
+
+    int n;
+    cin>>n;
+
+    int *A=new int[n];
+
+    srand(time(NULL));
+
+    for (int i=0, *pointer=A; i<n; i++){
+        *pointer=rand()%11+0;
+        cout<<*pointer<<" ";
+        pointer++;
+    }
+
+    int *najwiekszy=A;//nazwa tablicy jest wskaznikiem jej pierwszego elementu
+
+    for (int i=0, *pointer=A; i<n; i++,pointer++){
+        if(*pointer>*najwiekszy){
+            najwiekszy=pointer;
+        }
+    }
+
+    cout<<endl<<"Najwieksza wartosc tablicy: "<<*najwiekszy<<endl;
+
+    delete [] A;
+
+return 0;
+}
