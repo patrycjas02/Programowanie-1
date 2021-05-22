@@ -1,0 +1,27 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+
+using namespace std;
+
+int main (){
+
+    int A[]={2,6,5,1,3};
+    int *p;
+    p=A;
+
+    cout<<*p<<endl;            //wyswietla element tablicy A, na który wskazuje wskaznik (2)
+    cout<<*p+2<<endl;          //wyswietla element tablicy A, na który wskazuje wskaznik, powiększony o 2 (4)
+    cout<<*(p+2)<<endl;        //wyswietla element tablicy A, przesuniety o dwa miejsca w stosunku do elementu, na ktory wskazuje wskaznik (A[2],czyli 5)
+    cout<<&p<<endl;            //wyswietla adres wskaznika
+    cout<<&p+1<<endl;          //wyswietla adres kolejnej komorki po wskazniku
+    cout<<p<<endl;             //wyswietla adres pierwszego elementu tablicy A
+    cout<<A<<endl;             //wyswietla adres pierwszego elementu tablicy A
+    cout<<&A[0]<<endl;         //wyswietla adres pierwszego elementu tablicy A
+    cout<<&A[0]+3<<endl;       //wyswietli adres komorki przechowujacej liczbe 1
+    cout<<A+3<<endl;           //wyswietli adres komorki przechowujacej liczbe 1
+    cout<<p+(*(p+4)-3)<<endl;  //wynik w nawiasie to 0 - formula wyswietli adres pierwszego elementu tablicy A
+
+
+return 0;
+}
