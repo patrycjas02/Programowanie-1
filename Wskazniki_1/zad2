@@ -1,0 +1,36 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+
+using namespace std;
+
+int main (){
+
+    cout<<"Podaj liczbe naturalna z zakresu <1;20>: ";
+    int n;
+    cin>>n;
+
+    int *A;
+    A=new int[n];
+
+    cout<<"Podaj kolejne elementy tablicy"<<endl;
+
+    for (int i=0, *pointer=A; i<n; i++){
+        cin>>*pointer;
+        cout<<*pointer<<" ";
+        pointer++;
+    }
+    cout<<endl;
+
+    for (int i=0, *pointer=A; i<n; i++){
+        if (*pointer<0){
+            *pointer=0;
+        }
+        cout<<*pointer<<" ";
+        pointer++;
+    }
+
+    delete [] A;
+
+return 0;
+}
