@@ -1,0 +1,41 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+
+using namespace std;
+
+int main (){
+
+    int n=13;
+    int m=2;
+
+    int *A=new int[n];
+
+    srand(time(NULL));
+
+    for (int i=0, *pointer=A; i<n; i++){
+        *pointer=rand()%11+0;
+        cout<<*pointer<<" ";
+        pointer++;
+    }
+
+    cout<<endl;
+
+    int *pointer=A;
+    int j=0;
+    int tmp=*pointer;//zapisujemy w zmiennej pierwszy element tablicy
+
+    for(int i=0; i<n-1;i++){
+        *(pointer+j)= *(pointer+(m+j)%n);
+        j=(j+m)%n;
+    }
+
+    *(pointer+j)=tmp;
+
+    for(int i=0, *pointer=A; i<n; i++, pointer++){
+        cout<<*pointer<< " ";
+    }
+    cout<<endl;
+
+return 0;
+}
