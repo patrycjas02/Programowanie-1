@@ -1,0 +1,95 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+
+using namespace std;
+
+void Sortuj(int A[], int n){
+
+    int check1=1;
+    while(check1!=0){
+        check1=0;
+        for(int i=1;i<n; i++){
+            if(A[i]<A[i-1]){
+                swap(A[i],A[i-1]);
+                check1++;
+            }
+        }
+    }
+}
+
+int main (){
+
+    cout<<"Podaj wielkosci tablic: ";
+    int n;
+    cin>>n;
+    int m;
+    cin>>m;
+
+    int *A=new int[n];
+    int *B=new int[m];
+
+    srand(time(NULL));
+
+    cout<<endl<<"A przed sortowaniem: "<<endl;
+
+    for (int i=0, *pointer=A; i<n; i++){
+        *pointer=rand()%11+0;
+        cout<<*pointer<<" ";
+        pointer++;
+    }
+    cout<<endl;
+    Sortuj(A,n);
+    cout<<endl<<"A po sortowaniu:"<<endl;
+    for(int i=0, *pointer=A;i<n;i++,pointer++){
+        cout<<*pointer<<" ";
+    }
+
+    cout<<endl;
+
+    cout<<endl<<"B przed sortowaniem: "<<endl;
+
+    for (int i=0, *pointer=B; i<m; i++){
+        *pointer=rand()%11+0;
+        cout<<*pointer<<" ";
+        pointer++;
+    }
+
+    cout<<endl;
+    Sortuj(B,m);
+    cout<<endl<<"B po sortowaniu: "<<endl;
+    for(int i=0, *pointer=B;i<m;i++,pointer++){
+        cout<<*pointer<<" ";
+    }
+    cout<<endl;
+
+    int *C=new int[n+m];
+
+    int *pointer1=C;
+    for(int i=0,*pointer2=A;i<n;i++,pointer1++,pointer2++){
+        *pointer1=*pointer2;
+    }
+    for(int i=n,*pointer2=B;i<n+m;i++,pointer1++,pointer2++){
+        *pointer1=*pointer2;
+    }
+
+    cout<<endl<<"C przed sortowaniem:"<<endl;
+    for(int i=0, *pointer=C;i<m+n;i++,pointer++){
+        cout<<*pointer<<" ";
+    }
+    cout<<endl;
+    Sortuj(C,(n+m));
+
+    cout<<endl<<"C po sortowaniu:"<<endl;
+    for(int i=0, *pointer=C;i<m+n;i++,pointer++){
+        cout<<*pointer<<" ";
+    }
+
+    cout<<endl;
+
+    delete [] A;
+    delete [] B;
+    delete [] C;
+
+return 0;
+}
