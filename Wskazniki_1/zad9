@@ -36,6 +36,8 @@ int main (){
         cout<<*pointer<< " ";
     }
     cout<<endl;
+    
+    delete [] A;
 
 return 0;
 }
