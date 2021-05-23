@@ -1,0 +1,22 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+
+using namespace std;
+
+int main (){
+
+    int a=10;
+    int *b=&a;
+
+    int x=25;
+    int *y=&x;
+
+    cout<<"a: "<<*b<<endl<<"x: "<<*y<<endl;
+
+    swap(b,y);
+
+    cout<<"a: "<<*b<<endl<<"x: "<<*y<<endl;
+    
+ return 0;
+}
