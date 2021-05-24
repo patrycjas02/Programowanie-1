@@ -1,0 +1,49 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+
+using namespace std;
+
+int Silnia(int x){
+
+    int wynik=1;
+    for(int i=2;i<=x;i++){
+        wynik*=i;
+    }
+    return wynik;
+}
+
+int Newton(int n,int k){
+
+    return Silnia(n)/(Silnia(k)*Silnia(n-k));
+}
+
+int main (){
+
+    int n;
+    cin>>n;
+
+    int **S=new int*[n];
+
+    for(int i=0;i<n;i++){
+        *(S+i)=new int[i+1];
+    }
+
+    for(int i=0;i<n;i++){
+        for(int j=0;j<i+1;j++){
+            *(*(S+i)+j)=Newton(i,j);
+        }
+    }
+
+    for(int i=0;i<n;i++){
+        for(int j=0;j<i+1;j++){
+            cout<<*(*(S+i)+j)<<" ";
+        }
+        cout<<endl;
+    }
+
+    delete [] S;
+    //czy trzeba niezaleznie usunac kazda tablice w tablicy S?
+
+return 0;
+}
