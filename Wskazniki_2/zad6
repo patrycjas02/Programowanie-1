@@ -1,0 +1,53 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+
+using namespace std;
+
+int main (){
+
+    cout<<"Podaj dlugosc pierwszego lancuchu: ";
+    int n;
+    cin>>n;
+    cout<<"Podaj pierwszy lancuch znakow: "<<endl;
+    char *A=new char[n];
+    for (int i=0;i<n;i++){
+        cin>>*(A+i);
+    }
+
+    cout<<"Podaj dlugosc drugiego lancuchu: ";
+    int m;
+    cin>>m;
+    cout<<"Podaj drugi lancuch znakow: "<<endl;
+    char *B=new char[m];
+    for (int i=0;i<m;i++){
+        cin>>*(B+i);
+    }
+
+    int licznik=0;
+    int j=0;
+
+    while(*A!=*(B+j) && j<m){
+        j++;
+    }
+    if((*A=*(B+j))){
+        for (int i=0,k=j;i<n;i++,k++){
+            if(*(A+i)==*(B+k)){
+                licznik++;
+            }
+        }
+    }
+
+    if(licznik==n){
+        cout<<"Pierwszy lancuch znakow zawiera sie w drugim."<<endl;
+    }
+    else{
+        cout<<"Pierwszy lancuch znakow nie zawiera sie w drugim."<<endl;
+    }
+
+
+    delete [] A;
+    delete [] B;
+
+return 0;
+}
