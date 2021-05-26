@@ -1,0 +1,31 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+string filter(string s, char k){
+    string nowe="";
+    int length=s.length();
+    for(int i=0;i<length;i++){
+        if(s[i]!=k){
+            nowe+=s[i];
+        }
+    }
+    return nowe;
+}
+
+int main (){
+
+    string slowo1;
+    cin>>slowo1;
+
+    char znak;
+    cin>>znak;
+
+    cout<<filter(slowo1,znak);
+
+return 0;
+}
