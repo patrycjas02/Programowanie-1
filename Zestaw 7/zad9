@@ -1,0 +1,42 @@
+//wyciek pamieci moze powstac np. jezeli nie zwolnimy wszystkich elementow zajetych wczesniej przez wskazniki. Dla przykladu podam tu zadanie z poprzedniego zestawu.
+//w przykladzie nie dosc ze nie zwolniono wszystkich komorek, to rowniez usuwajac tablice A utracono indeksy wskaznikow, wiec po wykonaniu takiego programu nie mozna juz
+//zwolnic uzywanej pamieci
+
+#include <iostream>
+#include <math.h>
+#include <ctime>
+
+using namespace std;
+
+int main (){
+
+    cout<<"Podaj wymiary tablicy: ";
+    int x;
+    cin>>x;
+    int y;
+    cin>>y;
+    int z;
+    cin>>z;
+
+    srand(time(NULL));
+
+    int ***A=new int**[x];
+
+    for(int i=0;i<x;i++){
+        *(A+i)=new int*[y];
+        for(int j=0;j<y;j++){
+            *(*(A+i)+j)=new int[z];
+            for(int k=0;k<z;k++){
+                *(*(*(A+i)+j)+k)=rand()%11+0;
+                cout<<*(*(*(A+i)+j)+k)<<" ";
+            }
+            cout<<endl;
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+
+    delete [] A;
+
+return 0;
+}
