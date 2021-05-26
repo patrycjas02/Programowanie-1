@@ -1,0 +1,26 @@
+#define _USE_MATH_DEFINES
+#include <iostream>
+#include <cmath>
+#include <cstring>
+
+using namespace std;
+
+int add(int x, int y){
+    return x+y;
+}
+
+int multiply(int x, int y){
+    return x*y;
+}
+
+int operation(int (*add_or_multiply)(int, int), int x, int y){
+    cout<< add_or_multiply(x,y)<<endl;
+}
+
+int main (){
+
+    operation(add,21,36);
+    operation(multiply,4,15);
+
+return 0;
+}
