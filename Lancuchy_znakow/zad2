@@ -1,0 +1,25 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+string reverse(string s){
+    int length=s.length();
+    for(int i=0;i<length/2;i++){
+        swap(s[i],s[length-1-i]);
+    }
+    return s;
+}
+
+int main (){
+
+    string slowo1;
+    cin>>slowo1;
+
+    cout<<reverse(slowo1)<<endl;
+
+return 0;
+}
