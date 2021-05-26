@@ -1,0 +1,41 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+bool dirty(string s){
+    bool wynik;
+    int length=s.length();
+
+    for(int i=0;i<length;i++){
+        if((s[i]>=65 && s[i]<=90)||(s[i]>=97 && s[i]<=122)){
+            wynik=0;
+        }
+        else{
+            wynik=1;
+            break;
+        }
+    }
+    if(wynik==1){
+        return true;
+    }
+    else return false;
+}
+
+int main (){
+
+    string slowo1;
+    cin>>slowo1;
+
+    if(dirty(slowo1)==1){
+        cout<<"zadane slowo zawiera znaki specjalne badz cyfry"<<endl;
+    }
+    else{
+        cout<<"zadane slowo jest czyste"<<endl;
+    }
+
+return 0;
+}
