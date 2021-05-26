@@ -1,0 +1,44 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+string reverse(string s){
+    int length=s.length();
+    for(int i=0;i<length/2;i++){
+        swap(s[i],s[length-1-i]);
+    }
+    return s;
+}
+
+string dec2bin(string s){
+
+    string bin;
+    int length=s.length();
+    int decimal;
+    for(int i=length-1,pozycja=0;i>=0;i--,pozycja++){
+        decimal+=(s[i]-48)*pow(10,pozycja);
+    }
+    while(decimal!=0){
+        bin+=decimal%2+48;
+        decimal/=2;
+    }
+    return reverse(bin);
+
+}
+
+int main (){
+
+    string ciag;
+
+    cout<<"Podaj liczbe w systemie dziesietnym: ";
+    cin>>ciag;
+
+    cout<<dec2bin(ciag)<<endl;
+
+
+return 0;
+}
