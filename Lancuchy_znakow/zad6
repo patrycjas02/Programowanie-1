@@ -1,0 +1,38 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+bool pesel(string s){
+
+    int length=s.length();
+    int suma=(s[0]-48)+(s[1]-48)*3+(s[2]-48)*7+(s[3]-48)*9+(s[4]-48)+(s[5]-48)*3+(s[6]-48)*7+(s[7]-48)*9+(s[8]-48)+(s[9]-48)*3;
+    int kontrolna=10-(suma%10);
+
+    bool pesel=false;
+    if(length==11){
+        if(kontrolna==(s[10]-48)){
+            pesel=true;
+        }
+    }
+    if(pesel==1){
+        return true;
+    }
+    return false;
+}
+
+int main (){
+
+    string slowo;
+    cin>>slowo;
+
+    if(pesel(slowo)==1){
+        cout<<"podany ciag znakow moglby byc PESELem"<<endl;
+    }
+    else cout<<"podany ciag znakow nie moglby byc PESELem"<<endl;
+
+return 0;
+}
