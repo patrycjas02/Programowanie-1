@@ -1,0 +1,25 @@
+#define _USE_MATH_DEFINES
+#include <iostream>
+#include <cmath>
+#include <cstring>
+
+using namespace std;
+
+void yes(){
+    cout<<"Yes!"<<endl;
+}
+void no(){
+    cout<<"No!"<<endl;
+}
+void vote(void (*glos)()){
+    glos();
+}
+
+int main (){
+
+    vote(yes);
+    cout<<endl;
+    vote(no);
+
+return 0;
+}
