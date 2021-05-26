@@ -1,0 +1,24 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+string con(string s1, string s2){
+    return s1+s2;
+}
+
+int main (){
+
+    string slowo1;
+    cin>>slowo1;
+
+    string slowo2;
+    cin>>slowo2;
+
+    cout<<con(slowo1,slowo2)<<endl;
+
+return 0;
+}
