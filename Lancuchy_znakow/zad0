@@ -1,0 +1,33 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+bool pal (string s){
+    int length=s.length();
+    for(int i=0; i<length/2; i++){
+        if(s[i] != s[length-1-i]){
+            return false;
+        }
+    }
+    return true;
+
+}
+
+int main (){
+
+    string slowo;
+    cin>>slowo;
+
+    if(pal(slowo)==0){
+        cout<<"Zadane slowo nie jest palindromem."<<endl;
+    }
+    else{
+        cout<<"Zadane slowo jest palindromem"<<endl;
+    }
+
+return 0;
+}
