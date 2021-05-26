@@ -1,0 +1,37 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+string bin2dec(string s){
+    int length=s.length();
+    int suma=0;
+
+    string dec;
+
+    for(int i=length-1,miejsce=0;i>=0;i--,miejsce++){
+        suma+=((s[i]-48)*(pow(2,miejsce)));
+    }
+    while(suma!=0){
+        char x=suma%10+48;
+        dec=x+dec;
+        suma/=10;
+    }
+    return dec;
+}
+
+int main (){
+
+    string ciag;
+
+    cout<<"Podaj liczbe w systemie dwojkowym: ";
+    cin>>ciag;
+
+    cout<<bin2dec(ciag)<<endl;
+
+
+return 0;
+}
