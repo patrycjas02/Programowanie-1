@@ -1,0 +1,34 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main (){
+
+    string alfabet="abcdefghijklmnoprstuvwxyz";
+    int histogram[25]={0};
+
+    string tekst;
+    getline(cin,tekst);//funkcja wczytuje ciag znakow do momentu napotkania znaku konca linii
+    int dlugosc=tekst.length();
+
+    for(int i=0;i<dlugosc;i++){
+        for(int j=0;j<25;j++){
+            if(tekst[i]==alfabet[j]){
+                histogram[j]++;
+                continue;
+            }
+        }
+    }
+    for(int i=0;i<25;i++){
+        if(histogram[i]!=0){
+            cout<<"Litera "<<alfabet[i]<<": "<<histogram[i]<<endl;
+        }
+    }
+
+
+return 0;
+}
