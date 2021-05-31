@@ -1,0 +1,51 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+string reverse(string s){
+    int length=s.length();
+    for(int i=0;i<length/2;i++){
+        swap(s[i],s[length-1-i]);
+    }
+    return s;
+}
+
+string change_base(string s, int base1, int base2){
+
+    int dlugosc=s.length();
+    int suma=0;
+    string wynik="";
+
+    for(int i=0;i<dlugosc;i++){
+        suma+=((s[i]-48)*(pow(base1,(dlugosc-1-i))));
+    }
+    while(suma>0){
+        char liczba=suma%base2+48;
+        wynik+=liczba;
+        suma/=base2;
+    }
+
+    return (reverse(wynik));
+}
+
+int main (){
+
+    string liczba;
+    cout<<"Podaj liczbe: "<<endl;
+    cin>>liczba;
+    int podstawa1;
+    int podstawa2;
+    cout<<"W jakim systemie jest liczba? "<<endl;
+    cin>>podstawa1;
+    cout<<"Na jaki system chcesz zamienic liczbe? "<<endl;
+    cin>>podstawa2;
+    cout<<"Liczba w zmienionym systemie: "<<change_base(liczba,podstawa1,podstawa2)<<endl;
+
+
+return 0;
+}
