@@ -1,0 +1,74 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+int main (){
+
+    string wejsciowa;
+
+    string rzymskie="IVXLCDM";
+    int arabskie[]={1,5,10,50,100,500,1000};
+
+    cin>>wejsciowa;
+    int n=wejsciowa.length();
+
+    if(wejsciowa[0]=='I' || wejsciowa[0]=='V' || wejsciowa[0]=='X' || wejsciowa[0]=='L' || wejsciowa[0]=='C' || wejsciowa[0]=='D' || wejsciowa[0]=='M'){
+        int a;//odpowiednik arabskiej
+        int wynik=0;
+        int pozostalosc=0;
+
+        while(n>0){
+            for(int i=0;i<7;i++){
+                if(wejsciowa[n-1]==rzymskie[i]){
+                    a=arabskie[i];
+                }
+            }
+            if(a>=pozostalosc){
+                pozostalosc=a;
+                wynik+=a;
+            }
+            else{
+                wynik-=a;
+            }
+            n--;
+        }
+        cout<<wynik<<endl;
+    }
+    else if(wejsciowa[0]=='1' || wejsciowa[0]=='2' || wejsciowa[0]=='3' || wejsciowa[0]=='4' || wejsciowa[0]=='5' || wejsciowa[0]=='6' || wejsciowa[0]=='7' || wejsciowa[0]=='8' || wejsciowa[0]=='9'){
+        char tab_rzymskie[]={'M','D','C','L','X','V','I'};
+        int tab_arabskie[]={1000,500,100,50,10,5,1};
+        char *tab2_rzymskie[]={"CM","CD","XC","XL","IX","IV","I"};
+        int tab2_arabskie[]={900,400,90,40,9,4,1};
+
+        int x=0;
+
+        istringstream iss(wejsciowa);//strumien umozliwiajacy odczyt, konwersja typu zmiennej
+        iss>>x;
+
+        string wynik="";
+
+        int j=0;
+
+        while (x>0){
+
+            if(x>=tab_arabskie[j]){
+                x-=tab_arabskie[j];
+                wynik+=tab_rzymskie[j];
+            }
+            else if(x>=tab2_arabskie[j]){
+                x-=tab2_arabskie[j];
+                wynik+=tab2_rzymskie[j];
+            }
+            else j++;
+        }
+        cout<<wynik<<endl;
+    }
+
+
+return 0;
+}
