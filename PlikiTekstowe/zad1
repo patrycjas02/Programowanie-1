@@ -1,0 +1,26 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+#include <fstream>//"file stream"
+
+using namespace std;
+
+int main (){
+
+    fstream plik;//uchwyt do pliku
+    plik.open("Jabberwocky.txt");
+
+    string slowo;
+    int licznik=0;
+
+    while(plik>>slowo){//
+        licznik++;
+    }
+    plik.close();
+
+    cout<<licznik<<endl;
+
+return 0;
+}
