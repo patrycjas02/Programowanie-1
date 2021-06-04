@@ -1,0 +1,32 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+#include <fstream>
+#include <cmath>
+#include <algorithm>
+
+using namespace std;
+
+int main (){
+
+    fstream wejscie;
+    wejscie.open("Palindromy.txt",ios::in | ios::out);//ios::app - kiedy chcemy dopisac cos do juz istniejacego pliku
+    fstream wyjscie;
+    wyjscie.open("Ymordnilap.txt", ios::out);
+
+    string wers;
+
+    while(getline(wejscie,wers)){
+        if(wers[0]=='„'){
+            reverse(wers.begin(),wers.end());
+        }
+        wyjscie<<wers<<endl;
+    }
+
+    wejscie.close();
+    wyjscie.close();
+
+return 0;
+}
