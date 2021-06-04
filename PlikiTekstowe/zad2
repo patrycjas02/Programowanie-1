@@ -1,0 +1,41 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main (){
+
+    fstream plik;//uchwyt do pliku
+    plik.open("Jabberwocky.txt");
+
+    string tekst;
+
+    string alfabet="abcdefghijklmnoprstuvwxyz";
+    int histogram[25]={0};
+
+    while(getline(plik,tekst)){//funkcja wczytuje ciag znakow do momentu napotkania znaku konca linii
+    int dlugosc=tekst.length();
+
+    for(int i=0;i<dlugosc;i++){
+        for(int j=0;j<25;j++){
+            if(tekst[i]==alfabet[j]){
+                histogram[j]++;
+                continue;
+            }
+        }
+    }}
+    for(int i=0;i<25;i++){
+        if(histogram[i]!=0){
+            cout<<"Litera "<<alfabet[i]<<": "<<histogram[i]<<endl;
+        }
+    }
+
+    plik.close();
+
+
+return 0;
+}
