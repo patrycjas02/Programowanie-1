@@ -1,0 +1,23 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main (){
+
+    fstream plik;//uchwyt do pliku
+    plik.open("Jabberwocky.txt");
+
+    string wers;
+
+    while(getline(plik,wers)){
+        cout<<wers<<endl;
+    }
+    plik.close();
+
+return 0;
+}
