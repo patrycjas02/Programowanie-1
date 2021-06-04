@@ -1,0 +1,77 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+#include <fstream>
+#include <cmath>
+#include <algorithm>
+
+using namespace std;
+
+int main (){
+
+    fstream plik;
+    plik.open("Wybory.txt");
+
+    string linia;
+    int n=15;
+    int m=3;
+    int wyniki[3]={0};
+
+    while(getline(plik, linia)){
+
+        for(int i=0,j=0;i<5;i+=2,j++){
+            if(linia[i]=='2'){
+                wyniki[j]++;
+                continue;
+            }
+        }
+    }
+    for(int i=0;i<3;i++){
+        cout<<wyniki[i]<<" ";
+    }
+    cout<<endl;
+
+    int wygrany;
+    int check=0;
+
+    for(int i=0;i<3;i++){
+        if((double)wyniki[i]/(double)n>0.5){
+            wygrany=i+1;
+            check++;
+            cout<<"Wygrywa kandydat nr: "<<wygrany<<endl;
+            break;
+        }
+    }
+    if(check==0){
+
+        int tura2[2]={0};
+        int j=0;
+
+        for(int i=0;i<3;i++){
+            int licznik=0;
+            for(int j=0;j<3;j++){
+                if(wyniki[i]>wyniki[j]){
+                    licznik++;
+                }
+                if(licznik==m-1 || licznik==m-2){
+                    tura2[j]=i+1;
+                    j++;
+                    continue;
+                }
+            }
+        }
+        cout<<"Do drugiej tury przechodza kandydaci o numerach: ";
+        for(int i=0;i<2;i++){
+            cout<<tura2[i]<<" ";
+        }
+        cout<<endl;
+    }
+
+
+
+    plik.close();
+
+return 0;
+}
