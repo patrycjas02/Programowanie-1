@@ -14,7 +14,7 @@ int main (){
 
     string wers;
 
-    while(getline(plik,wers)){
+    while(getline(plik,wers)){//jeżeli nie bedzie kolejnego wersu, funkcja getline zwroci false
         cout<<wers<<endl;
     }
     plik.close();
