@@ -1,0 +1,23 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main (){
+
+    fstream plik;
+    plik.open("time.txt",ios::out);//ios::out daje sygnal programowi, ze ma strumien danych wyprowadzic do pliku
+
+    time_t czas=time(0);//funkcja time pobiera czas i wyswietla go w starozytnych sekundach
+    //cout<<asctime(localtime(&czas))<<endl;
+
+    plik<<asctime(localtime(&czas))<<endl;
+
+    plik.close();
+
+return 0;
+}
