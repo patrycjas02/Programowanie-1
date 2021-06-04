@@ -1,0 +1,42 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+#include <fstream>
+#include <cmath>
+#include <algorithm>
+
+using namespace std;
+
+int main (){
+
+    fstream plik;
+    plik.open("Wybory.txt",ios::out);
+
+    int n;//liczba wyborcow
+    int m;//liczba kandydatow
+    cout<<"Podaj liczbe wyborcow: ";
+    cin>>n;
+    cout<<"Podaj liczbe kandydatow: ";
+    cin>>m;
+
+    string wers;
+    int i=0;
+    while(i<n){
+        int A[m];
+        for(int j=0;j<m;j++){
+            A[j]=j;
+        }
+        random_shuffle(&A[0],&A[m]);
+        for(int j=0;j<m;j++){
+            plik<<A[j]<<" ";
+        }
+        plik<<endl;
+        i++;
+    }
+
+    plik.close();
+
+return 0;
+}
