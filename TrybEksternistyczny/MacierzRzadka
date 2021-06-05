@@ -1,0 +1,40 @@
+#include <iostream>
+#include <math.h>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+#include <fstream>//"file stream"
+
+using namespace std;
+
+int main (){
+
+    srand(time(NULL));
+    int n=5;
+
+    int matrix1[n][n]={{1,0,0,0,0},{0,1,0,0,0},{0,0,1,0,0},{0,0,0,1,0},{0,0,0,0,1}};
+
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            //matrix1[i][j]=rand()%10+0;
+            cout<<matrix1[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    int check=0;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            if(matrix1[i][j]==0){
+                check++;
+            }
+        }
+    }
+    if(check>=(((double)pow(n,2))/2.)){
+        cout<<endl<<"Macierz jest rzadka"<<endl;
+    }
+    else{
+        cout<<endl<<"Macierz nie jest rzadka"<<endl;
+    }
+
+return 0;
+}
