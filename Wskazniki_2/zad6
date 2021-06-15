@@ -6,7 +6,7 @@ using namespace std;
 
 int main (){
 
-    cout<<"Podaj dlugosc pierwszego lancuchu: ";
+    cout<<"Podaj dlugosc pierwszego lancucha: ";
     int n;
     cin>>n;
     cout<<"Podaj pierwszy lancuch znakow: "<<endl;
@@ -15,7 +15,7 @@ int main (){
         cin>>*(A+i);
     }
 
-    cout<<"Podaj dlugosc drugiego lancuchu: ";
+    cout<<"Podaj dlugosc drugiego lancucha: ";
     int m;
     cin>>m;
     cout<<"Podaj drugi lancuch znakow: "<<endl;
